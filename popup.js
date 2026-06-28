@@ -51,11 +51,13 @@ function renderResults(products) {
       (p, i) => `
     <a class="product" href="${p.url}" target="_blank" title="${p.title}">
       <div class="${rankClass(i)}">${i + 1}</div>
+      ${p.image ? `<img class="thumb" src="${p.image}" alt="" />` : ""}
       <div class="info">
         <div class="product-title">${p.title || "Unknown product"}</div>
         <div class="product-meta">
           ${starsHTML(p.stars)}
           <span class="review-count"><strong>${p.reviews.toLocaleString()}</strong> reviews</span>
+          ${p.price ? `<span class="price">${p.price}</span>` : ""}
         </div>
       </div>
     </a>
@@ -208,7 +210,13 @@ function scrapePage() {
     const href = linkEl ? linkEl.getAttribute("href").split("?")[0] : `/dp/${asin}`;
     const url = "https://www.amazon.in" + href;
 
-    products.push({ asin, title, stars, reviews: count, url });
+    // Price (current/offer price) and product thumbnail
+    const priceEl = item.querySelector(".a-price .a-offscreen");
+    const price = priceEl ? priceEl.textContent.trim() : null;
+    const imgEl = item.querySelector("img.s-image");
+    const image = imgEl ? imgEl.getAttribute("src") : null;
+
+    products.push({ asin, title, stars, reviews: count, url, price, image });
   });
 
   return products;
