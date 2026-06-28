@@ -5,8 +5,17 @@
   "description": "Find top 10 most reviewed Amazon products for any search",
   "permissions": ["scripting", "tabs", "storage"],
   "host_permissions": ["https://www.amazon.in/*"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icon.png"
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
   }
 }
