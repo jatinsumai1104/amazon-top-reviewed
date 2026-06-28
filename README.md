@@ -6,6 +6,10 @@ A Chrome extension (Manifest V3) that finds the **10 most-reviewed products** fo
 
 Type a query in the popup and hit Search. The extension opens the Amazon search results in a hidden background tab, scrapes the product listings (review counts, star ratings, titles, prices, thumbnails, links), pulls a second page if needed to reach 10 results, then closes the tab and shows the top 10 ranked by review count. Your last search is saved and restored when you reopen the popup.
 
+## Preview
+
+<img width="421" height="527" alt="image" src="https://github.com/user-attachments/assets/28e6fa52-1177-49af-bba4-b9a7cb2e35c3" />
+
 ## Install
 
 1. Open `chrome://extensions`
