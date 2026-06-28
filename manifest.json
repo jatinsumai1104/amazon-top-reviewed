@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Amazon Top Reviewed",
+  "version": "1.0",
+  "description": "Find top 10 most reviewed Amazon products for any search",
+  "permissions": ["scripting", "tabs", "storage"],
+  "host_permissions": ["https://www.amazon.in/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  }
+}
